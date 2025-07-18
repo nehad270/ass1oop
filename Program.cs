@@ -1,4 +1,5 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using System.ComponentModel;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ass1oop
 {
@@ -28,36 +29,66 @@ namespace ass1oop
 
 
 
-            bool isparsed;
-            object? Season_Name;
-            do
-            {
-                Console.WriteLine("please enter the season name");
-                isparsed = Enum.TryParse(typeof(Seas), Console.ReadLine(), out Season_Name);
+            //bool isparsed;
+            //object? Season_Name;
+            //do
+            //{
+            //    Console.WriteLine("please enter the season name");
+            //    isparsed = Enum.TryParse(typeof(Seas), Console.ReadLine(), out Season_Name);
 
-            } while (!isparsed);
+            //} while (!isparsed);
 
-            Seas? season = (Seas)Season_Name;
+            //Seas? season = (Seas)Season_Name;
 
-            switch (Season_Name)
-            {
-                case Seas.Spring:
-                    Console.WriteLine("march to may ");
-                    break;
-                case Seas.Autumn:
-                    Console.WriteLine("September to November ");
-                    break;
-                case Seas.Summer:
-                    Console.WriteLine("june to august");
-                    break;
-                case Seas.Winter:
-                    Console.WriteLine("December to February");
-                    break;
-                default:
-                    Console.WriteLine("please enter the season again ");
-                    break;
-            } 
+            //switch (Season_Name)
+            //{
+            //    case Seas.Spring:
+            //        Console.WriteLine("march to may ");
+            //        break;
+            //    case Seas.Autumn:
+            //        Console.WriteLine("September to November ");
+            //        break;
+            //    case Seas.Summer:
+            //        Console.WriteLine("june to august");
+            //        break;
+            //    case Seas.Winter:
+            //        Console.WriteLine("December to February");
+            //        break;
+            //    default:
+            //        Console.WriteLine("please enter the season again ");
+            //        break;
+            //} 
             #endregion
+
+
+            Peop peop1=new Peop();
+
+            //  3-Assign the following Permissions (Read, write, Delete, Execute) in a form of Enum           .
+            //Create Variable from previous Enum to Add and Remove Permission from variable,
+            //    check if specific Permission existed inside variable
+
+            
+//to add permissoins
+            peop1.Permission |= Permissions.write;
+            peop1.Permission |= Permissions.Read;
+
+            if ((peop1.Permission & Permissions.write) == Permissions.write)
+            {
+                Console.WriteLine("execited");
+                Console.WriteLine(peop1.Permission);
+            }
+            //to delete permission
+            peop1.Permission &= ~Permissions.Read;
+            Console.WriteLine(peop1.Permission);
+
+
+
+
+
+
+
+
+
 
 
 

@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Dark\source\repos\shared1\shared1.csproj" />
+  </ItemGroup>
+
 </Project>
