@@ -1,9 +1,13 @@
-﻿namespace ass1oop
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace ass1oop
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
+            #region 1
             //Create an Enum called "WeekDays" with the days of the week (Monday to Sunday)
             //as its members. Then, write a
             //C# program that prints out all the days of the week using this Enum.
@@ -11,6 +15,53 @@
             {
                 Console.WriteLine(day);
             }
+            #endregion
+
+            #region 2
+            // Create an Enum called "Seas on" with the four
+            // seasons(Spring, Summer, Autumn, Winter) as its members.Write
+            // a C# program that takes a season name as input from the user
+            // and displays the corresponding month range for that season.
+            // Note range for seasons ( spring march to may , summer june to august ,
+            // autumn September to November , winter December to February)
+
+
+
+
+            bool isparsed;
+            object? Season_Name;
+            do
+            {
+                Console.WriteLine("please enter the season name");
+                isparsed = Enum.TryParse(typeof(Seas), Console.ReadLine(), out Season_Name);
+
+            } while (!isparsed);
+
+            Seas? season = (Seas)Season_Name;
+
+            switch (Season_Name)
+            {
+                case Seas.Spring:
+                    Console.WriteLine("march to may ");
+                    break;
+                case Seas.Autumn:
+                    Console.WriteLine("September to November ");
+                    break;
+                case Seas.Summer:
+                    Console.WriteLine("june to august");
+                    break;
+                case Seas.Winter:
+                    Console.WriteLine("December to February");
+                    break;
+                default:
+                    Console.WriteLine("please enter the season again ");
+                    break;
+            } 
+            #endregion
+
+
+
         }
+
     }
 }
