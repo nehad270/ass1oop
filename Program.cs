@@ -61,34 +61,66 @@ namespace ass1oop
             #endregion
 
 
-            Peop peop1=new Peop();
+            #region 3
+            //Peop peop1 = new Peop();
 
-            //  3-Assign the following Permissions (Read, write, Delete, Execute) in a form of Enum           .
-            //Create Variable from previous Enum to Add and Remove Permission from variable,
-            //    check if specific Permission existed inside variable
+            ////  3-Assign the following Permissions (Read, write, Delete, Execute) in a form of Enum           .
+            ////Create Variable from previous Enum to Add and Remove Permission from variable,
+            ////    check if specific Permission existed inside variable
 
-            
-//to add permissoins
-            peop1.Permission |= Permissions.write;
-            peop1.Permission |= Permissions.Read;
 
-            if ((peop1.Permission & Permissions.write) == Permissions.write)
+            ////to add permissoins
+            //peop1.Permission |= Permissions.write;
+            //peop1.Permission |= Permissions.Read;
+
+            //if ((peop1.Permission & Permissions.write) == Permissions.write)
+            //{
+            //    Console.WriteLine("execited");
+            //    Console.WriteLine(peop1.Permission);
+            //}
+            ////to delete permission
+            //peop1.Permission &= ~Permissions.Read;
+            //Console.WriteLine(peop1.Permission);
+
+
+
+
+
+            #endregion
+
+
+            #region 4
+
+
+            /// 4.Create an Enum called "Colors" with the basic colors
+            /// (Red, Green, Blue) as its members.Write a C# program that takes
+            /// a color name as input from the user and displays a message indicating 
+            /// whether the input color is a primary color or not.
+
+
+
+
+            bool isparsed;
+            object? Colors_Name;
+            do
             {
-                Console.WriteLine("execited");
-                Console.WriteLine(peop1.Permission);
+                Console.WriteLine("please enter the color");
+                isparsed = Enum.TryParse(typeof(Colors), Console.ReadLine(), out Colors_Name);
+
+            } while (!isparsed);
+
+            Colors? color = (Colors)Colors_Name;
+            if (isparsed)
+            {
+                Console.WriteLine($"{color} is a primary color");
             }
-            //to delete permission
-            peop1.Permission &= ~Permissions.Read;
-            Console.WriteLine(peop1.Permission);
+            else
+            {
+                Console.WriteLine("not primary");
 
 
-
-
-
-
-
-
-
+            } 
+            #endregion
 
 
 
